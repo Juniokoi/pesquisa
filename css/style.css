@@ -4,21 +4,43 @@
 	content: '';
 	box-sizing: border-box;
 }
-* .container {
-}
 body {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr 1fr;
+	grid-template-areas: '. form .';
 	margin: 0;
 }
 body::before {
 	content: '';
-	height: 100%;
+	margin: 0;
+	left: -10px;
+	top: -10px;
+	height: 110%;
+	width: 110%;
 	z-index: -1;
-	width: 100%;
-	background-image: url('https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+	background-image: linear-gradient(
+			115deg,
+			rgba(158, 58, 111, 0.8),
+			rgba(136, 186, 206, 0.863)
+		),
+		url('https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
 	background-repeat: no-repeat;
-	size: 100%;
 	position: fixed;
 	background-size: cover;
+	/* background-position: center; */
 	filter: blur(2px);
-	background-position: center;
+}
+.container {
+	display: grid;
+}
+
+#form {
+	grid-area: form;
+
+	margin-top: 50px;
+	bottom: 0;
+}
+div > header,
+div > p {
+	text-align: center;
 }
