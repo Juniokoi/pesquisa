@@ -5,16 +5,9 @@
 	content: '';
 	box-sizing: border-box;
 }
-body {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	min-width: 50%;
-	grid-template-areas: '. form .';
-	margin: 0;
-	color: #fff;
-	font-weight: 400;
-	font-size: smaller;
-}
+
+/* ----- Imagem de fundo ------ */
+
 body::before {
 	content: '';
 	position: fixed;
@@ -36,15 +29,45 @@ body::before {
 	background-position: center;
 	filter: blur(1px);
 }
+
+/* ---------------- */
+/* Ajuste do layout */
+/* ---------------- */
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	min-width: 50%;
+	grid-template-areas: '. form .';
+	margin: 0;
+	color: #fff;
+	font-weight: 400;
+	font-size: smaller;
+}
+@media (max-width: 1024px) {
+	body {
+		grid-template-columns: 0.3fr 2fr 0.3fr;
+	}
+}
 .container {
 	display: grid;
 	margin: 3.125rem auto 0 auto;
+}
+@media (max-width: 1024px) {
+	.container {
+		margin: 0;
+		right: 0;
+	}
 }
 
 #form {
 	grid-area: form;
 	margin-top: 1em;
 	bottom: 0;
+}
+@media (min-witdh: 480px) {
+	#form {
+		display: grid;
+	}
 }
 textarea {
 	resize: vertical;
@@ -116,6 +139,7 @@ body,
 #submit {
 	font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
-p {
+p,
+h2 {
 	font-size: 1.1em;
 }
